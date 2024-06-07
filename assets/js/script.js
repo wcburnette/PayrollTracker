@@ -1,23 +1,31 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn')
   
- 
-  
 // Collect employee data
 const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
-    const employees = [];
-    let addingEmployees = [];
-    while (addingEmployees) {
-        let firstName = prompt("What's your first name:");
-        let lastName = prompt("What's your last name:");
-        let salary = prompt("What's your yearly salary:");
-        salary = parseInt(salary) || 0;
-        employees.push({firstName, lastName, salary,}); 
-      let addMore = prompt("Do you want to continue or cancel");
-      addingEmployees = addMore.toLowerCase() === 'continue';
+// TODO: Get user input to create and return an array of employee objects
+  const employees = [];
+  let addingEmployees = true;
+  while (addingEmployees) {
+    let firstName = prompt("What's your first name:");
+    let lastName = prompt("What's your last name:");
+    let salary;
+    do {
+      salary = prompt("What's your yearly salary:");
+      if (salary === null) {
+        salary = 0;
+        break;
+      }
+      salary = Number(salary);
+    } while (isNaN(salary));
+    employees.push({ firstName, lastName, salary });
+    let addMore = prompt("Do you want to continue or cancel?");
+    addingEmployees = addMore.toLowerCase() === 'continue';
+    if (addingEmployees === false && !confirm("Are you sure you want to cancel?")) {
+      addingEmployees = true;
     }
-      return employees;
+  }
+  return employees;
 };
 
 // Display the average salary
