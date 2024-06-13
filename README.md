@@ -24,3 +24,9 @@ getRandomEmployee: Selects and displays a random employee from the generated arr
 displayEmployees: Renders employee data to an HTML table.
 trackEmployeeData: Executes when the "Add Employees" button is clicked. It collects employee data, displays average salary, selects a random employee, sorts employees by last name, and displays them on the page.
 
+Site Link
+https://wcburnette.github.io/PayrollTracker/
+
+Screen Record
+https://1drv.ms/v/s!Ajvx8AL_kpmUmAIDHKwrKCWrtVeM?e=Bjga3K
+
